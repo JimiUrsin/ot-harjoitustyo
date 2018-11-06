@@ -7,3 +7,4 @@
 [komentorivi.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 Lokaali muutos
+Lokaali muutos joka on eri githubin muutoksen kanssa
