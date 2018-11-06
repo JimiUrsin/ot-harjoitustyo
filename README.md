@@ -1,6 +1,6 @@
-# Otsikko
-## Aliotsikko
+# Ohjelmistotekniikka, harjoitusty√∂
+## Teht√§v√§t
 
-Hieman tavallista teksti‰
-**T‰m‰ teksti on boldattu**
-*T‰m‰ taas on kursivoitu*
+#### Viikko 1
+[gitlog.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
