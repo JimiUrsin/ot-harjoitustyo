@@ -26,6 +26,26 @@ public class KassapaateTest {
         assertEquals(0, paate.edullisiaLounaitaMyyty());
     }
     
+    @Test
+    public void rahanLataaminenLisaaRahaaKassaan() {
+        paate.lataaRahaaKortille(kortti, 500);
+        assertEquals(100500, paate.kassassaRahaa());
+        assertEquals(1000, kortti.saldo());
+    }
+    
+    @Test
+    public void rahanLataaminenLisaaRahaaKortille() {
+        paate.lataaRahaaKortille(kortti, 500);
+        assertEquals(1000, kortti.saldo());
+    }
+    
+    @Test
+    public void kassaEiLataaNegatiivistaMaaraa() {
+        paate.lataaRahaaKortille(kortti, -500);
+        assertEquals(500, kortti.saldo());
+        assertEquals(100000, paate.kassassaRahaa());
+    }
+    
     // Käteisosto edullisesti -testit
     // -------------------------------------------------------------------------
     
