@@ -1,5 +1,13 @@
 ﻿# Ohjelmistotekniikka, harjoitustyö
-## Tehtävät
+
+## Harjoitustyön linkit
+
+[Ajankäyttö](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/Ajankaytto.md)
+
+[Vaatimusmäärittely](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
+
+
+## Laskarit
 
 #### Viikko 1
 [gitlog.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
