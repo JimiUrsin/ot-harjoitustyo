@@ -56,118 +56,21 @@ public class Logic {
         try {
             db.createNewFile();
         } catch(IOException e) {
-            System.err.println("Failed to create database file, data will not be saved.");
+            System.err.println("Failed to create database file, your data will not be saved for the next run.");
         }
         // Program introduction
         System.out.println("Welcome to Budget Spinner! Since it's your first time, let's get to know you, shall we?");
-
         System.out.println("\nBudget Spinner is an application for keeping track of your income and spending, giving you a visual representation of where your money goes.");
         System.out.println("We need a little bit of information of your economic status. Don't be shy, this will be just between you and me :)");
         
-        // String: Income name, Double: Income amount
-        HashMap<String, Double> incomeSources = new HashMap<>();
 
         System.out.println("Let's add your monthly sources of income. These will be used to calculate your daily allowance.");
-
-        // Add income names and amounts to temporary hashmap, these will be saved to a file later
-        while(true) {
-            System.out.print("Income source: ");
-            String source = userInput.nextLine();
-            
-            double amount;            
-            while(true) {
-            // Only breaks when amount is successfully retrieved.
-            System.out.print("Income amount: ");
-                try {
-                    amount = Double.parseDouble(userInput.nextLine());
-                } catch (NumberFormatException e) {
-                    System.out.println("Well now, that doesn't seem like a number to me, let's try again.");
-                    continue;
-                }
-                if (amount < 0) {
-                    System.out.println("Oof, a negative income? That's called an expense, my friend. We'll get to those later, try again.");
-                    continue;
-                }
-                if (amount == 0) {
-                    System.out.println("An income of 0? That doesn't seem like an income at all. Let's try again with a real number, shall we?");
-                    continue;
-                }
-                break;
-            }
-
-            System.out.println("\nHere's what you entered:");
-            System.out.println("Source of income: " + source);
-            System.out.println(String.format("Amount of income: %.2f %s", amount, currency));
-
-            System.out.println("\nIs that right? [Y]es or [N]o");
-            if (askYesNo()) {
-                if (incomeSources.containsKey(source)) {
-                    System.out.println("Hmm, seems like you've added a source of income with this name before. Let's try again.");
-                    continue;
-                } else {
-                    incomeSources.put(source, amount);
-                }
-                
-                System.out.println("Sweet!");
-                System.out.println("Want to add more sources of income? [Y]es or [N]o");
-                
-                if (askYesNo()) continue;
-                else break;
-            } else {
-                System.out.println("Alright, let's try again.");
-            }
-        }
+        HashMap<String, Double> incomeSources = getUserIncome();
         
-        // String: Expense name, Double: Expense amount
-        HashMap<String, Double> expenses = new HashMap<>();
+        System.out.println("Alright, now the same with your expenses");
+        HashMap<String, Double> expenses = getUserExpenses();
         
-        System.out.println("Alright, now same with the expenses.");
         
-        // Pretty much a repeat of last one, with different strings
-        while(true) {
-            System.out.print("Expense: ");
-            String source = userInput.nextLine();
-            double amount;
-            while(true) {
-            System.out.print("Expense amount: ");
-                try {
-                    amount = Double.parseDouble(userInput.nextLine());
-                } catch (NumberFormatException e) {
-                    System.out.println("Well now, that doesn't seem like a number to me, let's try again.");
-                    continue;
-                }
-                if (amount < 0) {
-                    System.out.println("Oof, a negative expense? That's called income, my friend. Didn't we just go through those?");
-                    continue;
-                }
-                if (amount == 0) {
-                    System.out.println("An expense of 0? That doesn't seem like an expense at all. Let's try again with a real number, shall we?");
-                    continue;
-                }
-                break;
-            }
-
-            System.out.println();
-            System.out.println("Here's what you entered:");
-            System.out.println("Expense name: " + source);
-            System.out.println(String.format("Expense amount: %.2f %s", amount, currency));
-
-            System.out.println("\nIs that right? [Y]es or [N]o");
-            if (askYesNo()) {
-                if (expenses.containsKey(source)) {
-                    System.out.println("Hmm, seems like you've added an expense with this name before. Let's try again.");
-                    continue;
-                } else {
-                    expenses.put(source, amount);
-                }
-                System.out.println("Sweet!");
-                System.out.println("Want to add more expenses? [Y]es or [N]o");
-                if (askYesNo()) continue;
-                else break;
-            } else {
-                System.out.println("Alright, let's try again.");
-            }
-        }
         
         // Calculate daily and monthly allowance
         double monthly = 0;
@@ -212,4 +115,111 @@ public class Logic {
         pw.close();
     }
     
+    /**
+     * Gets 1 source of income or more and returns it/them as a HashMap
+     * @return HashMap of sources of income and their values
+     */
+    HashMap<String, Double> getUserIncome() {
+        HashMap<String, Double> incomeSources = new HashMap<>();
+        while(true) {
+            // Get expense name and amount
+            System.out.print("Income source: ");
+            String source = userInput.nextLine();            
+            double amount = getAmount();
+            
+            // Confirm input
+            System.out.println("\nHere's what you entered:");
+            System.out.println("Source of income: " + source);
+            System.out.println(String.format("Amount of income: %.2f %s", amount, currency));
+
+            System.out.println("\nIs that right? [Y]es or [N]o");
+            if (askYesNo()) {
+                // Duplicate income sources not allowed
+                if (incomeSources.containsKey(source)) {
+                    System.out.println("Hmm, seems like you've added a source of income with this name before. Let's try again.");
+                    continue;
+                } else {
+                    incomeSources.put(source, amount);
+                }
+                
+                System.out.println("Sweet!");
+                System.out.println("Want to add more sources of income? [Y]es or [N]o");
+                
+                if (askYesNo()) continue;
+                else break;
+            } else {
+                System.out.println("Alright, let's try again.");
+            }
+        }
+        return incomeSources;
+    }
+    
+    /**
+     * Gets 1 expense or more and returns it/them as a HashMap
+     * @return HashMap of expenses and their values
+     */
+    HashMap<String, Double> getUserExpenses() {
+        HashMap<String, Double> expenses = new HashMap<>();
+        
+        while(true) {
+            // Get expense name and amount
+            System.out.print("Expense: ");
+            String source = userInput.nextLine();
+            double amount = getAmount();
+            
+            // Confirm input
+            System.out.println("\nHere's what you entered:");
+            System.out.println("Expense name: " + source);
+            System.out.println(String.format("Expense amount: %.2f %s", amount, currency));
+
+            System.out.println("\nIs that right? [Y]es or [N]o");
+            if (askYesNo()) {
+                // Duplicate expenses not allowed
+                if (expenses.containsKey(source)) {
+                    System.out.println("Hmm, seems like you've added an expense with this name before. Let's try again.");
+                    continue;
+                } else {
+                    expenses.put(source, amount);
+                }
+                
+                System.out.println("Sweet!");
+                System.out.println("Want to add more expenses? [Y]es or [N]o");
+                if (askYesNo()) continue;
+                else break;
+            } else {
+                System.out.println("Alright, let's try again.");
+            }
+        }
+        
+        return expenses;
+    }
+    
+    /**
+     * Prompts the user for input until we get an input that fulfills the following constraints:
+     * 1. Is an actual number such that it can be parsed by parseDouble
+     * 2. Is not negative
+     * 3. Is not zero
+     * @return A valid double value that the user has put in
+     */
+    Double getAmount() {
+        Double amount;
+        while(true) {
+            System.out.print("Expense amount: ");
+            try {
+                amount = Double.parseDouble(userInput.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Well now, that doesn't seem like a number to me, let's try again.");
+                continue;
+            }
+            if (amount < 0) {
+                System.out.println("Negative amounts are not allowed. Nor do they make any sense, to be honest...");
+                continue;
+            }
+            if (amount == 0) {
+                System.out.println("Is there really a point in marking down zero money?");
+                continue;
+            }
+            return amount;
+        }
+    }
 }
