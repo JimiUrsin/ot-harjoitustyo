@@ -27,7 +27,7 @@ mvn jacoco:report
 
 Ohjelma voidaan suorittaa suoraan komennolla 
 ```
-mvn compile exec:java -Dexec.mainClass=budgetspinner.budgetspinner.Main
+mvn compile exec:java -Dexec.mainClass=budgetspinner.Main
 ```
 
 Kannattanee poistaa sovelluksen juuresta löytyvä data.txt aina ennen testausta. Nykyisessä tilassa jos data.txt on olemassa, ohjelma ei oikeastaan tee mitään.

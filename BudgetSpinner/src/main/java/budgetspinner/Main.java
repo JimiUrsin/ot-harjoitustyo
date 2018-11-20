@@ -1,5 +1,5 @@
 
-package budgetspinner.budgetspinner;
+package budgetspinner;
 
 import java.io.File;
 
