@@ -1,22 +1,31 @@
-﻿# Ohjelmistotekniikka, harjoitustyö
+﻿# Budget Spinner
+Sovelluksen avulla voi pitää yllä tietoa siitä, kuinka paljon rahaa käyttäjällä on saatavilla kunakin päivänä. Sovellukselle määritellään aluksi kuukausittaiset tulot ja menot, joiden pohjalta sovellus laskee käytettävissä olevaan rahamäärään päivittäin lisättävän summan. Käyttäjän satunnaistulot ja -menot kasvattavat tai laskevat käytettävissä olevan rahan määrää.
 
-## Harjoitustyön linkit
+## Dokumentaatio
 
 [Ajankäyttö](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/Ajankaytto.md)
 
 [Vaatimusmäärittely](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
 
+## Releaset
+TBD
 
-## Laskarit
+## Komentorivitoiminnot
 
-#### Viikko 1
-[gitlog.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+### Testaus
+Testaus suoritetaan komennolla
 
-[komentorivi.txt](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+```
+mvn test
+```
 
-#### Viikko 2
-[Unicafe-projekti](https://github.com/JimiUrsin/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
+Testikattavuusraportti luodaan komennolla
 
-[Testikattavuuskuva](https://raw.githubusercontent.com/JimiUrsin/ot-harjoitustyo/master/laskarit/viikko2/testikattavuus.png)
+```
+mvn jacoco:report
+```
 
-[Maksukortin ja kassapäätteen testit](https://github.com/JimiUrsin/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe/src/test/java/com/mycompany/unicafe)
+Ohjelma voidaan suorittaa suoraan komennolla 
+```
+mvn compile exec:java -Dexec.mainClass=budgetspinner.budgetspinner.Main
+```
