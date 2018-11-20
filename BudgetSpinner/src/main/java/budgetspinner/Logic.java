@@ -13,9 +13,6 @@ import java.util.Scanner;
  * @author Jimi Ursin
  */
 public class Logic {
-    private double total;
-    private double daily;
-    private double available;
     private Scanner userInput = new Scanner(System.in);
     private String currency;
     
@@ -73,6 +70,7 @@ public class Logic {
         
         
         // Calculate daily and monthly allowance
+        // TODO What to do when amount is zero or negative?
         double monthly = 0;
         for(String s : incomeSources.keySet()) {
             monthly += incomeSources.get(s);
@@ -217,6 +215,14 @@ public class Logic {
             }
             if (amount == 0) {
                 System.out.println("Is there really a point in marking down zero money?");
+                continue;
+            }
+            if (Double.isInfinite(amount)) {
+                System.out.println("Wishful thinking... try again");
+                continue;
+            }
+            if (Double.isNaN(amount)) {
+                System.out.println("The amount of money is not a number? What are you on about?");
                 continue;
             }
             return amount;
