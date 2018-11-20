@@ -11,7 +11,7 @@ public class Main {
     // TODO Parempi nimi luokalle?
     
     public static void main(String[] args) {        
-        Logic logic = new Logic("€");
+        Logic logic = new Logic("EUR");
         
         // If data.txt doesn't exist, we know it's the first time this application is being run
         File db = new File("data.txt");

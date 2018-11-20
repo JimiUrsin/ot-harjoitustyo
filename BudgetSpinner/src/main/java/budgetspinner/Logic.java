@@ -87,7 +87,7 @@ public class Logic {
         
         System.out.println("Nice, we're all done here.");
         System.out.println("Here's how we're doing:");
-        System.out.println(String.format("Monthly allowance: %.2f, %s", monthly, currency));
+        System.out.println(String.format("Monthly allowance: %.2f %s", monthly, currency));
         System.out.println(String.format("Daily allowance: %.2f %s", daily, currency));
         
         System.out.println("The daily allowance is going to be your baseline, and we'll be tracking its amount throughout the month.");
@@ -204,7 +204,7 @@ public class Logic {
     Double getAmount() {
         Double amount;
         while(true) {
-            System.out.print("Expense amount: ");
+            System.out.print("Amount: ");
             try {
                 amount = Double.parseDouble(userInput.nextLine());
             } catch (NumberFormatException e) {
