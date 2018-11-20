@@ -1,6 +1,5 @@
 package budgetspinner;
 
-import budgetspinner.Logic;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +15,7 @@ public class LogicTest {
     
     @Before
     public void setUp() {
-        logic = new Logic("testdb.txt");
+        logic = new Logic("EUR");
     }
     
     @Test
