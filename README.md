@@ -18,3 +18,5 @@
 [Unicafe-projekti](https://github.com/JimiUrsin/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
 
 [Testikattavuuskuva](https://raw.githubusercontent.com/JimiUrsin/ot-harjoitustyo/master/laskarit/viikko2/testikattavuus.png)
+
+[Maksukortin ja kassapäätteen testit](https://github.com/JimiUrsin/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe/src/test/java/com/mycompany/unicafe)
