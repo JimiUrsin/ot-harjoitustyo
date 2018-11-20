@@ -31,8 +31,8 @@ public class Logic {
      * @return true if answer was yes, false if answer was no
      */
     boolean askYesNo() {
-        String answer = userInput.nextLine().toLowerCase();
         while (true) {
+            String answer = userInput.nextLine().toLowerCase();
             if (answer.equals("yes") || answer.equals("y")) {
                 return true;
             } else if (answer.equals("no") || answer.equals("n")) {
