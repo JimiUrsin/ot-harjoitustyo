@@ -6,4 +6,6 @@
 | 20.11.| 0,5  | Testien luonti (ei vielä kovin monta, tällä viikolla keskityin ohjelman tekoon) |
 |       | 2,5  | Logiikan luonti
 |       | 1    | Logiikkaluokan selvennys ja korjaus
-| yht   | 6   | | 
+| 27.11.| 4    | GUI-migraatio
+|       | 1    | Uusien testien teko
+| yht   | 11   | | 
