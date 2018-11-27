@@ -8,4 +8,5 @@
 |       | 1    | Logiikkaluokan selvennys ja korjaus
 | 27.11.| 4    | GUI-migraatio
 |       | 1    | Uusien testien teko
-| yht   | 11   | | 
+|       | 2    | Päänäkymän luonti ja muuta siihen liittyvää
+| yht   | 13   | | 
