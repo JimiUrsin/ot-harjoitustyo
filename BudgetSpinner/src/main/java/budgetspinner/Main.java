@@ -1,6 +1,8 @@
 
 package budgetspinner;
 
+import budgetspinner.logic.Logic;
+import budgetspinner.GUI.FirstTimeSetup;
 import java.io.File;
 
 /**
@@ -10,13 +12,14 @@ import java.io.File;
 public class Main {
     // TODO Parempi nimi luokalle?
     
-    public static void main(String[] args) {        
-        Logic logic = new Logic("EUR");
+    public static void main(String[] args) { 
         
         // If data.txt doesn't exist, we know it's the first time this application is being run
         File db = new File("data.txt");
-        boolean firstTime = !db.exists();
+        if (!db.exists()) {
+            FirstTimeSetup.launch(FirstTimeSetup.class);            
+        }
         
-        if (firstTime) logic.firstTimeSetup(db);
+        
     }
 }
