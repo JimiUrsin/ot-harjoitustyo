@@ -31,3 +31,12 @@ mvn compile exec:java -Dexec.mainClass=budgetspinner.Main
 ```
 
 Kannattanee poistaa sovelluksen juuresta löytyvä data.txt aina ennen testausta. Nykyisessä tilassa jos data.txt on olemassa, ohjelma ei oikeastaan tee mitään.
+
+### Checkstyle
+
+Checkstyle suoritetaan komennolla
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
