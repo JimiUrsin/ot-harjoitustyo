@@ -1,5 +1,5 @@
 
-package budgetspinner.GUI;
+package budgetspinner.gui;
 
 import budgetspinner.logic.Logic;
 import java.util.Optional;

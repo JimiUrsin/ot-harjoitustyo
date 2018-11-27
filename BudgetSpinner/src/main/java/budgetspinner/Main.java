@@ -1,8 +1,8 @@
 
 package budgetspinner;
 
-import budgetspinner.GUI.FirstTimeSetup;
-import budgetspinner.GUI.MainView;
+import budgetspinner.gui.FirstTimeSetup;
+import budgetspinner.gui.MainView;
 import java.io.File;
 
 /**
