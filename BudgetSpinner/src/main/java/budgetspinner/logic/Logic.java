@@ -7,8 +7,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +34,7 @@ public final class Logic {
      * @param income HashMap of String-Double pairs of income
      * @param expenses HashMap of String-Double pairs of expenses
      */
-    public static void saveIncomeExpenseToFile(String filename, HashMap<String, Double> income, HashMap<String, Double> expenses) {
+    public static void saveAmountsToFile(String filename, HashMap<String, Double> income, HashMap<String, Double> expenses) {
         PrintWriter pw;
         File f = new File(filename);
         try {
@@ -44,11 +50,11 @@ public final class Logic {
             return;
         }
         
-        for(String s : income.keySet()) {
+        for (String s : income.keySet()) {
             pw.write(s.replaceAll("(\n|\r)", "") + "," + income.get(s) + "\n");
         }
         pw.write("\n\n");
-        for(String s : expenses.keySet()) {
+        for (String s : expenses.keySet()) {
             pw.write(s.replaceAll("(\n|\r)", "") + "," + expenses.get(s) + "\n");
         }
         
@@ -72,6 +78,8 @@ public final class Logic {
         }
         
         pw.write(amount.toString());
+        pw.write("\n\n");
+        pw.write("" + System.currentTimeMillis());
         pw.close();
     }
     
@@ -89,6 +97,36 @@ public final class Logic {
             System.err.println("Could not read running total from file");
             return -1.0;
         }
+    }
+    
+    public static int daysElapsedSinceLastRun(String filename) {
+        BufferedReader bf;
+        try {
+            bf = new BufferedReader(new FileReader(new File(filename)));
+        } catch (FileNotFoundException e) {
+            System.err.println("Could not load date from file: File not found");
+            return -1;
+        }
+        long time = -1;
+        try {
+            // Skip running total value
+            bf.readLine();
+            bf.readLine();
+            bf.readLine();
+            Long.parseLong(bf.readLine());
+        } catch (IOException e) {
+            System.err.println("Could not read date from file");
+            return -1;
+        }
+        int days = 0;
+
+        Calendar before = Calendar.getInstance();
+        before.setTimeInMillis(time);
+        Calendar now = Calendar.getInstance();
+        days += (now.get(Calendar.YEAR) - before.get(Calendar.YEAR)) * 365;
+        days += now.get(Calendar.DAY_OF_YEAR) - before.get(Calendar.DAY_OF_YEAR);
+        System.out.println(days);
+        return days;
     }
     
     
@@ -115,11 +153,11 @@ public final class Logic {
     
     public static Double calculateDailyAmount(HashMap<String, Double> income, HashMap<String, Double> expenses) {
         double amount = 0;
-        for(String s : income.keySet()) {
+        for (String s : income.keySet()) {
             amount += income.get(s);
         }
         
-        for(String s : expenses.keySet()) {
+        for (String s : expenses.keySet()) {
             amount -= expenses.get(s);
         }
         

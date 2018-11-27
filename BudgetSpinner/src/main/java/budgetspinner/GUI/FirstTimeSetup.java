@@ -53,7 +53,9 @@ public class FirstTimeSetup extends Application{
         stage.setScene(new Scene(makeIncomeExpensePane(stage, false, expense)));
         stage.showAndWait();
         
-        Logic.saveIncomeExpenseToFile("data.txt", income, expense);
+        Logic.saveAmountsToFile("data.txt", income, expense);
+        Logic.saveTotalAndDateToFile("running.txt", Logic.calculateDailyAmount(income, expense));
+        new MainView().start(stage);
     }
     
     /**
@@ -76,7 +78,6 @@ public class FirstTimeSetup extends Application{
         infoText.setTextAlignment(TextAlignment.CENTER);
         
         Button confirm = new Button("Let's go!");
-        confirm.setAlignment(Pos.CENTER);
         confirm.setOnAction(e -> {
             stage.close();
         });
@@ -85,6 +86,13 @@ public class FirstTimeSetup extends Application{
         return infoPane;
     }
     
+    /**
+     * Creates the pane which lists recurring income sources and allows the user to add/remove them.
+     * @param stage Stage in which the pane will be created
+     * @param forIncome Whether to ask for income or expenses
+     * @param map Map in which the columns' contents will be written to after the stage is closed.
+     * @return VBox containing all the elements of the stage
+     */
     VBox makeIncomeExpensePane(Stage stage, boolean forIncome, HashMap<String, Double> map) {
         String incomeOrExpense = forIncome ? "Income" : "Expense";
         

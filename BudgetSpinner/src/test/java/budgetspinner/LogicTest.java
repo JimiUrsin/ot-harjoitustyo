@@ -41,7 +41,7 @@ public class LogicTest {
         expense.put("testie", 654.0);
         expense.put("testif", 321.0);
         
-        Logic.saveIncomeExpenseToFile(filename, income, expense);
+        Logic.saveAmountsToFile(filename, income, expense);
         
         File f = new File(filename);
         BufferedReader br = new BufferedReader(new FileReader(f));
