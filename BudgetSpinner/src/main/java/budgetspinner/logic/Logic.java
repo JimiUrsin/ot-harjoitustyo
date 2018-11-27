@@ -120,7 +120,7 @@ public final class Logic {
         }
         
         for(String s : expenses.keySet()) {
-            amount -= income.get(s);
+            amount -= expenses.get(s);
         }
         
         return amount * 12 / 365;
