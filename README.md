@@ -7,6 +7,8 @@ Sovelluksen avulla voi pitää yllä tietoa siitä, kuinka paljon rahaa käyttä
 
 [Vaatimusmäärittely](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
 
+[Arkkitehtuuri](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Releaset
 TBD
 
