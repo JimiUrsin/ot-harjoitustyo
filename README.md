@@ -53,3 +53,7 @@ Suoritettava JAR muodostetaan komennolla
 ```
  mvn package
 ```
+
+### Tiedossa olevat ongelmat
+
+- Asetuksiin päästävä ratasikoni ei ole klikattava koko kuvan osalta, vaan pelkästään mustasta osasta
