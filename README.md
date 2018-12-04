@@ -14,7 +14,7 @@ Gear icon made by [Anton Saputro](http://www.antonps.com/) on [Flaticon](https:/
 [Arkkitehtuuri](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ## Releaset
-TBD
+[v1.0](https://github.com/JimiUrsin/ot-harjoitustyo/releases/tag/v1.0)
 
 ## Komentorivitoiminnot
 
