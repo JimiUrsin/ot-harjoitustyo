@@ -26,6 +26,7 @@ mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
+Näennäisesti pieni testikattavuus johtuu metodikutsuista, jotka kutsuvat samaa metodia oletusarvoisella datatiedostonimellä
 
 ```
 mvn jacoco:report
@@ -45,3 +46,10 @@ Checkstyle suoritetaan komennolla
 ```
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+
+### Suoritettava JAR
+
+Suoritettava JAR muodostetaan komennolla
+```
+ mvn package
+```
