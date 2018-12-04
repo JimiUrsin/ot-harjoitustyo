@@ -9,4 +9,6 @@
 | 27.11.| 4    | GUI-migraatio
 |       | 1    | Uusien testien teko
 |       | 2    | Päänäkymän luonti ja muuta siihen liittyvää
-| yht   | 13   | | 
+| 4.12. | 3    | Tiedostonlukulogiikan suoraviivaistaminen ja käyttöliittymän hionta
+|       | 2    | Releasen konfiguraatio ja viikon vaadittavat osuudet
+| yht   | 18   | | 
