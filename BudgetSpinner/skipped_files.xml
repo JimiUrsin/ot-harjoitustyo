@@ -5,6 +5,8 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="budgetspinner.GUI.FirstTimeSetup.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="budgetspinner.GUI.MainView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="budgetspinner.gui.FirstTimeSetup.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="budgetspinner.gui.MainView.java" checks="[a-zA-Z0-9]*"/>	
+    <suppress files="budgetspinner.gui.OptionsMenu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="budgetspinner.gui.WindowFactory.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

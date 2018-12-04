@@ -3,6 +3,7 @@ package budgetspinner;
 
 import budgetspinner.gui.FirstTimeSetup;
 import budgetspinner.gui.MainView;
+import budgetspinner.logic.Logic;
 import java.io.File;
 
 /**
@@ -10,14 +11,10 @@ import java.io.File;
  * @author Jimi Ursin
  */
 public class Main {
-    // TODO Parempi nimi luokalle?
     
     public static void main(String[] args) throws Exception { 
-        
-        // If data.txt or running.txt doesn't exist, we know it's the first time this application is being run
-        File db = new File("data.txt");
-        File running = new File("running.txt");
-        if (!db.exists() || !running.exists()) {
+        File db = new File(Logic.DATA_FILENAME);
+        if (!db.exists()) {
             FirstTimeSetup.launch(FirstTimeSetup.class);            
         } else {
             MainView.launch(MainView.class);
