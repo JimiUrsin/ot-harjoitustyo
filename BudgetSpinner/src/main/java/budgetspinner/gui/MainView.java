@@ -47,8 +47,7 @@ public class MainView extends Application {
         int days = Read.daysElapsedSinceLastRun();
         double dailyIncome = Read.getDailyIncomeFromFile();
         amount += days * dailyIncome;
-        Label currentAmount = new Label();
-        refreshLabel(currentAmount);
+        Label currentAmount = new Label(String.format("%.2f %s", amount, Logic.currency));
         currentAmount.setFont(new Font("Arial", 40));
         
         // Options gear image        
@@ -60,7 +59,7 @@ public class MainView extends Application {
             } catch (Exception ex) {
                 System.err.println("Unable to open options menu");
             }
-            refreshLabel(currentAmount);
+            refreshLabelAndStage(currentAmount, stage);     
         });
         HBox gearBox = new HBox();
         gearBox.getChildren().add(gearView);
@@ -72,8 +71,8 @@ public class MainView extends Application {
         income.setOnAction(e -> {
             Double amt = askForAmount(true);
             if (!amt.equals(-1.0)) {
-                amount += amt;
-                currentAmount.setText(String.format("%.2f", amount));
+                amount += amt;                
+                refreshLabelAndStage(currentAmount, stage);
             }
         });
         
@@ -83,7 +82,7 @@ public class MainView extends Application {
             Double amt = askForAmount(false);
             if (!amt.equals(-1.0)) {
                 amount -= amt;
-                currentAmount.setText(String.format("%.2f", amount));
+                refreshLabelAndStage(currentAmount, stage);       
             }
         });
         
@@ -95,6 +94,7 @@ public class MainView extends Application {
         mainGroup.setSpacing(20);
         mainGroup.setPadding(new Insets(5, 0, 0, 5));
         mainGroup.getChildren().addAll(gearBox, name, currentAmount, buttonGroup);
+        
         
         
         Scene s = new Scene(mainGroup, mainGroup.getPrefWidth(), mainGroup.getPrefHeight());
@@ -124,8 +124,10 @@ public class MainView extends Application {
         return -1.0;
     }
     
-    private void refreshLabel(Label label) {
+    private void refreshLabelAndStage(Label label, Stage stage) {
         label.setText(String.format("%.2f %s", amount, Logic.currency));
+        stage.hide();
+        stage.show();
     }
     
 }
