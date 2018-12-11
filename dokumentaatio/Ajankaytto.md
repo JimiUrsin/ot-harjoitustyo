@@ -11,4 +11,6 @@
 |       | 2    | Päänäkymän luonti ja muuta siihen liittyvää
 | 4.12. | 3    | Tiedostonlukulogiikan suoraviivaistaminen ja käyttöliittymän hionta
 |       | 2    | Releasen konfiguraatio ja viikon vaadittavat osuudet
-| yht   | 18   | | 
+| 11.12.| 3    | Säätöä GUI->gui migraation kanssa, kaikkien muiden konffien säätäminen, tiedostonluvun säätö
+|       | 1    | Käyttöohje ja repon siistiminen
+| yht   | 22   | | 
