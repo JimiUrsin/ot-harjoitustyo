@@ -116,8 +116,11 @@ public class Write {
         Path filePath = new File(filename).toPath();
         try {
             ArrayList<String> lines = (ArrayList<String>) Files.readAllLines(filePath);
-            if (lines.size() == 202) lines.add(currency);
-            else lines.set(202, currency);
+            if (lines.size() == 202) {
+                lines.add(currency);
+            } else {
+                lines.set(202, currency);
+            }
             Files.write(filePath, lines);
         } catch (IOException e) {
             System.err.println("Unable to write currency to file");

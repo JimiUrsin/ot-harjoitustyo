@@ -66,6 +66,31 @@ public class ReadTest {
     }
     
     @Test
+    public void readingCurrencyWorks() {
+        String[] input = new String[] {
+            "TC",
+            "<e>",
+            "morethanthreecharacters",
+            ""
+        };
+        String[] expectedOutput = new String[] {
+            "TC",
+            "EUR",
+            "EUR",
+            "EUR"
+        };
+        
+        for(int i = 0; i < input.length; i++) {
+            Write.saveCurrencyToFile(testFilename, input[i]);
+            String read = Read.readCurrencyFromFile(testFilename);
+            
+            if (!read.equals(expectedOutput[i])) {
+                fail("Currency read from file was supposed to be " + expectedOutput[i] + " but was: " + read);
+            }
+        }
+    }
+    
+    @Test
     public void dayCalculatingWorks() {
         long millis = System.currentTimeMillis();
         millis -= 86_400_000L;

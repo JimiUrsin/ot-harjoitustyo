@@ -84,6 +84,18 @@ public class WriteTest {
         }
     }
     
+    @Test
+    public void savingCurrencyWorks() {
+        String currency = "TC";
+        Write.saveCurrencyToFile(testFilename, currency);
+        
+        String readCurrency = Read.readCurrencyFromFile(testFilename);
+        
+        if (!currency.equals(readCurrency)) {
+            fail("Currency read from file was supposed to be " + currency + " but was " + readCurrency);
+        }
+    }
+    
     
     
     @Test
