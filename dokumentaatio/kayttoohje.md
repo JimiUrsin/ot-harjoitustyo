@@ -5,7 +5,7 @@ Lataa [viimeisin release](https://github.com/JimiUrsin/ot-harjoitustyo/releases)
 Ohjelmaa ensimmäistä kertaa pyörittäessä ohjelma tulee pyytämään tietoja, kuten ensimmäinen ikkuna kertoo.
 
 ### Tulon/menon lisäys ja poisto
-Tulon-/menonlähteen (jäljemmin "lähde") lisäämistä varten olevat ikkunat ovat identtisiä toiminnaltaan.
+Tulon-/menonlähteen (jäljempänä "lähde") lisäämistä varten olevat ikkunat ovat identtisiä toiminnaltaan.
 
 Ensimmäinen näistä ikkunoista toimii tulojen lisäämiseen, ja toinen menoille.
 
