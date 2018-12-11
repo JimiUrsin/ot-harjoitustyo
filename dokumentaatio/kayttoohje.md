@@ -20,10 +20,12 @@ Kun kaikki haluamasi lähteet on lisätty, paina "Done!"-painiketta ja ohjelma s
 
 ## Päänäkymä
 ![Päänäkymä](https://i.imgur.com/UB9tVls.png)
+
 Päänäkymässä näet päivittäisen budjettisi, rataspainikkeen joka vie asetuksiin sekä painikkeet satunnaistulon/-menon lisäämiselle.
 
 ### Satunnaistulon/-menon lisäys
 ![Satunnaistulo](https://i.imgur.com/oBzIhow.png)
+
 Tässä näkymässä voit lisätä satunnaistulon/-menon.
 
 Lisäys toimii yksinkertaisesti kirjoittamalla lisäyksen määrän "Amount"-kenttään ja painamalla sen jälkeen "OK"-painiketta.
@@ -32,6 +34,7 @@ Lisäyksen voi peruuttaa painamalla "Cancel"-painiketta, jolloin budjettia ei mu
 
 ## Asetukset
 ![Asetukset](https://i.imgur.com/UpNcRlC.png)
+
 Tässä näkymässä voit muokata tulon-/menonlähteitä, sekä ohjelman käyttämää valuuttaa.
 
 ### Tulojen/menojen muokkaus
