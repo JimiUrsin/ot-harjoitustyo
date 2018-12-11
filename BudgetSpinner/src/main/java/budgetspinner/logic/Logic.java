@@ -14,6 +14,7 @@ import java.util.HashMap;
 public final class Logic {
     public static final String DATA_FILENAME = "budgetspinner_data";
     public static final String FILLER = "<e>";
+    public static String currency = " EUR";
     
     private Logic() {
         

@@ -7,6 +7,7 @@ import budgetspinner.logic.Logic;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Optional;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -36,11 +37,21 @@ public class MainView extends Application {
     
     public void mainView(Stage stage) throws URISyntaxException {
         stage.setTitle("Budget Spinner");
-        Label name = new Label("Budget Spinner");
+        Label name = new Label("Today's budget");
         name.setFont(new Font("Arial", 24));
         
-        // Options gear image
         
+        
+        // Running total
+        amount = Read.loadRunningTotalFromFile();
+        int days = Read.daysElapsedSinceLastRun();
+        double dailyIncome = Read.getDailyIncomeFromFile();
+        amount += days * dailyIncome;
+        Label currentAmount = new Label();
+        refreshLabel(currentAmount);
+        currentAmount.setFont(new Font("Arial", 40));
+        
+        // Options gear image        
         URL url = getClass().getResource("/options-gear.png");
         ImageView gearView = new ImageView(url.toString());
         gearView.setOnMouseClicked(e -> {
@@ -49,17 +60,10 @@ public class MainView extends Application {
             } catch (Exception ex) {
                 System.err.println("Unable to open options menu");
             }
+            refreshLabel(currentAmount);
         });
         HBox gearBox = new HBox();
         gearBox.getChildren().add(gearView);
-        
-        // Running total
-        amount = Read.loadRunningTotalFromFile();
-        int days = Read.daysElapsedSinceLastRun();
-        double dailyIncome = Read.getDailyIncomeFromFile();
-        amount += days * dailyIncome;
-        Label currentAmount = new Label(String.format("%.2f", amount));
-        currentAmount.setFont(new Font("Arial", 40));
         
         // "Add income" button
         HBox buttonGroup = new HBox();
@@ -113,9 +117,15 @@ public class MainView extends Application {
             Double amt = Logic.checkAmount(result.get());
             if (!amt.equals(-1.0)) {
                 return amt;
+            } else {                
+                WindowFactory.showErrorMessage("Your input was not in the required form.\nYour budget will not be changed.");
             }
         }
         return -1.0;
+    }
+    
+    private void refreshLabel(Label label) {
+        label.setText(String.format("%.2f %s", amount, Logic.currency));
     }
     
 }
