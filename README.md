@@ -63,6 +63,7 @@ Javadocin voi luoda komennolla
  mvn javadoc:javadoc
 ```
 Luotu javadoc löytyy kansiosta \target\site\apidocs
+
 Olen tietoinen, että javadoc ei jostain kumman syystä suostu lisäämään Logic-luokan doc-kommentteja javadociin.
 
 
