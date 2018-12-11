@@ -1,5 +1,5 @@
 # Käyttöohje
-Lataa [viimeisin release](https://github.com/JimiUrsin/ot-harjoitustyo/releases) .jar muodossa.
+Lataa [viimeisin release](https://github.com/JimiUrsin/ot-harjoitustyo/releases) .jar-muodossa.
 
 ## Konfigurointi
 Ohjelmaa ensimmäistä kertaa pyörittäessä ohjelma tulee pyytämään tietoja, kuten ensimmäinen ikkuna kertoo.
