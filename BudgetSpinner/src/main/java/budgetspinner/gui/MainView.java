@@ -4,10 +4,8 @@ package budgetspinner.gui;
 import budgetspinner.fileio.Read;
 import budgetspinner.fileio.Write;
 import budgetspinner.logic.Logic;
-import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Locale;
 import java.util.Optional;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -16,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -36,6 +33,8 @@ public class MainView extends Application {
     }
     
     public void mainView(Stage stage) throws URISyntaxException {
+        Logic.currency = Read.readCurrencyFromFile();
+        
         stage.setTitle("Budget Spinner");
         Label name = new Label("Today's budget");
         name.setFont(new Font("Arial", 24));
@@ -59,7 +58,7 @@ public class MainView extends Application {
             } catch (Exception ex) {
                 System.err.println("Unable to open options menu");
             }
-            refreshLabelAndStage(currentAmount, stage);     
+            refreshLabelAndStage(currentAmount, stage);
         });
         HBox gearBox = new HBox();
         gearBox.getChildren().add(gearView);
@@ -100,7 +99,7 @@ public class MainView extends Application {
         Scene s = new Scene(mainGroup, mainGroup.getPrefWidth(), mainGroup.getPrefHeight());
         
         stage.setOnHidden(e -> {
-            Write.saveTotalAndDateToFile(amount);
+            Write.saveAllToFile(amount);
         });
         
         stage.setResizable(false);

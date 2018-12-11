@@ -41,7 +41,7 @@ public class FirstTimeSetup extends Application {
         
         Logic.initDataFile();
         Write.saveAmountsToFile(income, expense);
-        Write.saveTotalAndDateToFile(Logic.calculateDailyAmount(income, expense));
+        Write.saveAllToFile(Logic.calculateDailyAmount(income, expense));
         new MainView().start(stage);
     }
     

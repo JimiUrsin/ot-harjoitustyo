@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Jimi Ursin
  */
-public final class WindowFactory {
+public class WindowFactory {
 
     
     private WindowFactory() {

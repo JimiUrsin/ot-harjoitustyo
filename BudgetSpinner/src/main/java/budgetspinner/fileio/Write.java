@@ -91,13 +91,40 @@ public class Write {
     public static void writeContentToLine(String[] data, int line) {
         writeContentToLine(Logic.DATA_FILENAME, data, line);
     }
-
-    public static void saveTotalAndDateToFile(String filename, Double amount) {
+    
+    /**
+     * Saves the running total, date timestamp and currency to the given file
+     * @param filename File to write to
+     * @param amount Amount that will be written to the file
+     */
+    public static void saveAllToFile(String filename, Double amount) {
         saveRunningTotalToFile(filename, amount);
         saveDateToFile(filename);
+        saveCurrencyToFile(Logic.currency);
     }
 
-    public static void saveTotalAndDateToFile(Double amount) {
-        saveTotalAndDateToFile(Logic.DATA_FILENAME, amount);
+    public static void saveAllToFile(Double amount) {
+        saveAllToFile(Logic.DATA_FILENAME, amount);
+    }
+    
+    /**
+     * Saves given currency to file with given name. Maintains backwards compatibility with older versions
+     * @param filename
+     * @param currency 
+     */
+    public static void saveCurrencyToFile(String filename, String currency) {
+        Path filePath = new File(filename).toPath();
+        try {
+            ArrayList<String> lines = (ArrayList<String>) Files.readAllLines(filePath);
+            if (lines.size() == 202) lines.add(currency);
+            else lines.set(202, currency);
+            Files.write(filePath, lines);
+        } catch (IOException e) {
+            System.err.println("Unable to write currency to file");
+        }
+    }
+    
+    public static void saveCurrencyToFile(String currency) {
+        saveCurrencyToFile(Logic.DATA_FILENAME, currency);
     }
 }

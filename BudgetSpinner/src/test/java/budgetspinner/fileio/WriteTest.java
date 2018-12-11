@@ -75,7 +75,7 @@ public class WriteTest {
     @Test
     public void savingRunningTotalWorks() throws FileNotFoundException, IOException {
         Double amount = 123.0;
-        Write.saveTotalAndDateToFile(testFilename, amount);
+        Write.saveAllToFile(testFilename, amount);
         
         String readAmount = Read.readContentFromLine(testFilename, 0, 1).get(0);
         
