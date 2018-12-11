@@ -26,11 +26,13 @@ mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
-Näennäisesti pieni testikattavuus johtuu metodikutsuista, jotka kutsuvat samaa metodia oletusarvoisella datatiedostonimellä
 
 ```
 mvn jacoco:report
 ```
+
+Näennäisesti pieni testikattavuus johtuu metodikutsuista, jotka kutsuvat samaa metodia oletusarvoisella datatiedostonimellä
+
 ### Suoritus
 Ohjelma voidaan suorittaa suoraan komennolla 
 ```
