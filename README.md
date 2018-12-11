@@ -56,6 +56,16 @@ Suoritettava JAR muodostetaan komennolla
  mvn package
 ```
 
+### Javadoc
+
+Javadocin voi luoda komennolla
+```
+ mvn javadoc:javadoc
+```
+Luotu javadoc löytyy kansiosta \target\site\apidocs
+Olen tietoinen, että javadoc ei jostain kumman syystä suostu lisäämään Logic-luokan doc-kommentteja javadociin.
+
+
 ### Tiedossa olevat ongelmat
 
 - Asetuksiin päästävä ratasikoni ei ole klikattava koko kuvan osalta, vaan pelkästään mustasta osasta
