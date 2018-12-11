@@ -97,8 +97,11 @@ public class Read {
     
     public static String readCurrencyFromFile(String filename) {
         String content = readContentFromLine(filename, 202, 1).get(0);
-        if (content.equals(Logic.FILLER) || content.length() < 1 || content.length() > 3) return "EUR";
-        else return content;
+        if (content.equals(Logic.FILLER) || content.length() < 1 || content.length() > 3) {
+            return "EUR";
+        } else {
+            return content;
+        }
     }
     
     public static String readCurrencyFromFile() {
