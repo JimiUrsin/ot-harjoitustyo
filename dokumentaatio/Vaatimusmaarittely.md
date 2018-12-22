@@ -12,11 +12,10 @@ Tällä sovelluksella on vain peruskäyttäjän rooli, eivätkä muut roolit ole
 
 - Sovellukselle voi kertoa kuukausittaiset pysyvät tulot ja menot, näiden avulla lasketaan päivittäinen budjetti
 - Sovellukseen voi lisätä satunnaistuloja ja -menoja, jolloin käytettävissä olevan budjetin määrä pienenee tai suurenee vastaavasti.
-- Sovelluksella voi tarkistaa menneiden päivien budjettihistorian
-- Sovellus muistaa edellisiltä päiviltä, missä kohtaa budjetti menee kuukauden kohdalla (eli jos käytät kuukauden ensimmäisenä päivänä 5 € yli budjettisi, se summa poistetaan seuraavan päivän budjetista)
+- Sovellukseen voi asettaa haluamansa valuutan, joka näytetään budjetin yhteydessä.
+- Sovellus muistaa edellisten päivien jäljelle jääneen budjetin, ja siihen lisätään päivittäin rahamäärä, joka lasketaan tuloista ja menoista.
 
 ## Jatkokehitysideoita
 
-- Useiden valuuttojen tuki
 - Budjetin kaaviointinäkymä
 - Erilaiset tyypit menoille (ruoka, auto, vakuutus tms.)
