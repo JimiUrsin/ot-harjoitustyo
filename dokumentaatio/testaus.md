@@ -22,7 +22,7 @@ Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus o
 
 Tämä kattavuus johtuu metodeista, jotka kutsuvat tiedostonluku/-kirjoitusmetodeja oletusarvoisella datatiedostonimellä.
 
-![Testikattavuus](todo)
+![Testikattavuus](https://i.imgur.com/UdTzKkV.png)
 
 Testaamatta jäivät tilanteet, joissa käyttäjät tai tehtävät tallettavia tiedostoja ei ole, tai niihin ei ole luku- ja kirjoitusoikeutta.
 
