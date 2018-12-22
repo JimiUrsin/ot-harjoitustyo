@@ -13,4 +13,5 @@
 |       | 2    | Releasen konfiguraatio ja viikon vaadittavat osuudet
 | 11.12.| 3    | Säätöä GUI->gui migraation kanssa, kaikkien muiden konffien säätäminen, tiedostonluvun säätö
 |       | 1    | Käyttöohje ja repon siistiminen
-| yht   | 22   | | 
+| 22.12.| 1	   | Javadoc-dokumentaation luonti
+| yht   | 23   | | 
