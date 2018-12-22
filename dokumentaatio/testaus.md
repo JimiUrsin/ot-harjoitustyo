@@ -24,8 +24,6 @@ Tämä kattavuus johtuu metodeista, jotka kutsuvat tiedostonluku/-kirjoitusmetod
 
 ![Testikattavuus](https://i.imgur.com/UdTzKkV.png)
 
-Testaamatta jäivät tilanteet, joissa käyttäjät tai tehtävät tallettavia tiedostoja ei ole, tai niihin ei ole luku- ja kirjoitusoikeutta.
-
 ## Järjestelmätestaus
 
 Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
