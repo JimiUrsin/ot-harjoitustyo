@@ -1,6 +1,21 @@
 # Käyttöohje
 Lataa [viimeisin release](https://github.com/JimiUrsin/ot-harjoitustyo/releases) .jar-muodossa.
 
+## Käynnistys
+Ohjelman voi käynnistää kaksoisklikkaamalla ladattua .jar-tiedostoa.
+
+Jos ohjelma ei jostain syystä käynnisty tällä tavalla, ohjelman voi käynnistää suorittamalla komentoikkunassa komennon
+
+```
+java -jar BudgetSpinner-<VERSIO>.jar
+```
+
+jossa <VERSIO> korvataan nykyisellä versiolla, eli tämän hetkisen uusimman version tapauksessa komento on
+  
+```
+java -jar BudgetSpinner-1.02.jar
+```
+
 ## Konfigurointi
 Ohjelmaa ensimmäistä kertaa pyörittäessä ohjelma tulee pyytämään tietoja, kuten ensimmäinen ikkuna kertoo.
 
