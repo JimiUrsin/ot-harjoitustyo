@@ -15,6 +15,8 @@ Gear icon made by [Anton Saputro](http://www.antonps.com/) on [Flaticon](https:/
 
 [Käyttöohje](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
 ## Viimeisin release
 [v1.01](https://github.com/JimiUrsin/ot-harjoitustyo/releases/tag/v1.01)
 
@@ -64,7 +66,7 @@ Javadocin voi luoda komennolla
 ```
  mvn javadoc:javadoc
 ```
-Luotu javadoc löytyy kansiosta \target\site\apidocs
+Luotu javadoc löytyy kansiosta _target/site/apidocs_
 
 ### Tiedossa olevat ongelmat
 
