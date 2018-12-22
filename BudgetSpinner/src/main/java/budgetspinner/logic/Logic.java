@@ -12,9 +12,14 @@ import java.util.HashMap;
  * @author Jimi Ursin
  */
 public final class Logic {
+    /** Data file to be used for all operations */
     public static final String DATA_FILENAME = "budgetspinner_data";
+    
+    /** File filler string, since we can't have empty rows. Will be used for comparisons */
     public static final String FILLER = "<e>";
-    public static String currency = " EUR";
+    
+    /** Currency to be shown with the daily budget */
+    public static String currency = "EUR";
     
     private Logic() {
         
@@ -35,6 +40,9 @@ public final class Logic {
         }
     }
     
+    /**
+     * Calls initDataFile with the default data filename
+     */
     public static void initDataFile() {
         initDataFile(DATA_FILENAME);
     }
@@ -43,9 +51,9 @@ public final class Logic {
     
     
     /**
-     * Tries to parse a given string. It needs to fulfill following requirements
-     * 1. It's parseable by parseDouble
-     * 2. It's more than zero
+     * Tries to parse a given string. It needs to fulfill following requirements<br>
+     * 1. It's parseable by parseDouble<br>
+     * 2. It's more than zero<br>
      * 3. It's not infinite or NaN
      * @param amountString The string that will be parsed
      * @return If the amount was valid, it will be returned, -1.0 otherwise
@@ -64,7 +72,7 @@ public final class Logic {
     }
     
     /**
-     * Calculates the daily amount to be added to the user's running total every day
+     * Calculates the daily amount to be added to the user's running total every day<br>
      * Calculated by ((sum of incomes) - (sum of expenses)) * 12 / 365
      * @param income HashMap of income sources
      * @param expenses HashMap of expenses

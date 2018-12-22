@@ -118,6 +118,10 @@ public class WindowFactory {
                 showErrorMessage("There were no items in the list. Please try again.");
                 valid = false;
             }
+            if (table.getItems().size() > 100) {
+                showErrorMessage("Sorry, but the program currently only supports a maximum of 100 income sources or expenses. Please try again.");
+                valid = false;
+            }
             if (valid) {
                 stage.close();
             } else {                
@@ -136,6 +140,10 @@ public class WindowFactory {
         return incomeVBox;
     }
     
+    /**
+     * Shows an error alert to the user
+     * @param message The message to be shown to the user
+     */
     static void showErrorMessage(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
@@ -144,6 +152,9 @@ public class WindowFactory {
         alert.showAndWait();
     }
     
+    /**
+     * Datatype of the income and expense editing windows
+     */
     public static class IncomeExpense {
         
         final SimpleStringProperty amount;

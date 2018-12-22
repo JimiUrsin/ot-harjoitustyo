@@ -25,6 +25,7 @@ import javafx.stage.Stage;
  * @author Jimi
  */
 public class MainView extends Application {
+    /** Running total */
     private Double amount;
     
     @Override
@@ -32,7 +33,11 @@ public class MainView extends Application {
         mainView(stage);
     }
     
-    public void mainView(Stage stage) throws URISyntaxException {
+    /**
+     * Constructs and displays the main view
+     * @param stage Stage into which the main view will be constructed
+     */
+    public void mainView(Stage stage) {
         Logic.currency = Read.readCurrencyFromFile();
         
         stage.setTitle("Budget Spinner");

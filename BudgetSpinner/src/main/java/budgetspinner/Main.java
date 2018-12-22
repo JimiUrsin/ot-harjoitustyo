@@ -12,7 +12,12 @@ import java.io.File;
  */
 public class Main {
     
-    public static void main(String[] args) throws Exception { 
+    /**
+     * Checks whether or not a data file exists (ergo, if program has been run
+     * before) and either runs the main view or the first time setup based on that.
+     * @param args Program arguments, not used
+     */
+    public static void main(String[] args) { 
         File db = new File(Logic.DATA_FILENAME);
         if (!db.exists()) {
             FirstTimeSetup.launch(FirstTimeSetup.class);            

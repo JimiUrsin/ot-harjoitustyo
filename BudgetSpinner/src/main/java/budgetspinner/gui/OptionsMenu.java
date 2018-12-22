@@ -25,19 +25,26 @@ public class OptionsMenu extends Application {
         optionsMenu(stage);
     }
     
+    /**
+     * Options menu, contains buttons for editing income/expenses and currency
+     * @param stage Stage in which the menu will be constructed
+     */
     private void optionsMenu(Stage stage) {
+        // Income editing button
         Button income = new Button("Edit income");
         income.setOnAction(e -> {
             showEditMenu(true);
         });
         income.setPrefWidth(120);
         
+        // Expense editing button
         Button expense = new Button("Edit expenses");        
         expense.setOnAction(e -> {
             showEditMenu(false);
         });
         expense.setPrefWidth(120);
         
+        //Currency editing button
         Button currency = new Button("Set currency");
         currency.setOnAction(e -> {
             String curr = askForCurrency();
@@ -47,16 +54,21 @@ public class OptionsMenu extends Application {
         });
         currency.setPrefWidth(120);
         
-        
+        // Main group, contains all buttons of the menu
         VBox mainGroup = new VBox();
         mainGroup.getChildren().addAll(income, expense, currency);
+        
         Scene s = new Scene(mainGroup, mainGroup.getPrefWidth(), mainGroup.getPrefHeight());
         stage.setScene(s);
-        stage.initStyle(StageStyle.UNIFIED);
+        stage.initStyle(StageStyle.UNIFIED); // Don't remember why I picked this one
         stage.setResizable(false);
         stage.showAndWait();
     }
     
+    /**
+     * Shows the first time setup income or expense editing window
+     * @param income If true, asks for income, expenses otherwise
+     */
     private void showEditMenu(boolean income) {
         Stage s = new Stage();
         HashMap<String, Double> map = Read.loadIncomeExpenseFromFile(income);
