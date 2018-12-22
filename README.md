@@ -18,7 +18,7 @@ Gear icon made by [Anton Saputro](http://www.antonps.com/) on [Flaticon](https:/
 [Testausdokumentti](https://github.com/JimiUrsin/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 ## Viimeisin release
-[v1.01](https://github.com/JimiUrsin/ot-harjoitustyo/releases/tag/v1.01)
+[v1.02](https://github.com/JimiUrsin/ot-harjoitustyo/releases/tag/1.02)
 
 ## Komentorivitoiminnot
 
